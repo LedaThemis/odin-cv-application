@@ -1,3 +1,18 @@
+.inputs-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.value-display {
+    margin: 0;
+}
+
+
 .submit-button, .edit-button {
     width: 100%;
     border: 1px black solid;
