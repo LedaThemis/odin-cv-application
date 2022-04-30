@@ -15,7 +15,7 @@ class App extends Component {
       generalEditable: true,
       schoolName: '',
       titleOfStudy: '',
-      periodOfStudy: 0,
+      periodOfStudy: '',
       educationEditable: true,
     };
 
