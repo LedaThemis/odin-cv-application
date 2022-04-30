@@ -15,7 +15,7 @@ class App extends Component {
       generalEditable: true,
       schoolName: '',
       titleOfStudy: '',
-      periodOfStudy: NaN,
+      periodOfStudy: 0,
       educationEditable: true,
     };
 
@@ -56,7 +56,7 @@ class App extends Component {
           titleOfStudy={titleOfStudy}
           periodOfStudy={periodOfStudy}
           onInputChange={this.onInputChange}
-          educationEditable={educationEditable}
+          editable={educationEditable}
           setEditable={this.setEditable}
         />
       </div>
