@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import '../styles/General.css';
+
 class General extends Component {
   constructor(props) {
     super(props);
