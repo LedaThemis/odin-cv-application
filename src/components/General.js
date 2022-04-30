@@ -20,7 +20,7 @@ class General extends Component {
         ></input>
       );
     } else {
-      return <p>{htmlValue}</p>;
+      return <p className="value-display">{htmlValue}</p>;
     }
   }
 

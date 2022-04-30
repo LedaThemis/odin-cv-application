@@ -1,0 +1,20 @@
+.inputs-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.value-display {
+    margin: 0;
+}
+
+#general-section-submit, #general-section-edit {
+    width: 100%;
+    border: 1px black solid;
+    background-color: white;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, .2);
+}
