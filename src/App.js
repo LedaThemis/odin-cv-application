@@ -9,9 +9,11 @@ class App extends Component {
       name: '',
       email: '',
       phoneNumber: '',
+      generalEditable: true,
     };
 
     this.onInputChange = this.onInputChange.bind(this);
+    this.setEditable = this.setEditable.bind(this);
   }
 
   onInputChange(e) {
@@ -22,12 +24,25 @@ class App extends Component {
     });
   }
 
+  setEditable(statekey, newState) {
+    this.setState({
+      [statekey]: newState,
+    });
+  }
+
   render() {
-    const { name, email, phoneNumber } = this.state;
+    const { name, email, phoneNumber, generalEditable } = this.state;
 
     return (
       <div className="App">
-        <General name={name} email={email} phoneNumber={phoneNumber} onInputChange={this.onInputChange} />
+        <General
+          name={name}
+          email={email}
+          phoneNumber={phoneNumber}
+          onInputChange={this.onInputChange}
+          editable={generalEditable}
+          setEditable={this.setEditable}
+        />
       </div>
     );
   }
