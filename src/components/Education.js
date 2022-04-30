@@ -60,7 +60,7 @@ class Education extends Component {
           </div>
           <div className="input-div">
             <label className="input-label" htmlFor="periodOfStudy">
-              Period of Study
+              Period of Study (yrs.)
             </label>
 
             {displayElement(
