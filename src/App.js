@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import Education from './components/Education';
 import General from './components/General';
+
+import './App.css';
 
 class App extends Component {
   constructor() {
@@ -10,6 +13,10 @@ class App extends Component {
       email: '',
       phoneNumber: '',
       generalEditable: true,
+      schoolName: '',
+      titleOfStudy: '',
+      periodOfStudy: NaN,
+      educationEditable: true,
     };
 
     this.onInputChange = this.onInputChange.bind(this);
@@ -31,7 +38,8 @@ class App extends Component {
   }
 
   render() {
-    const { name, email, phoneNumber, generalEditable } = this.state;
+    const { name, email, phoneNumber, generalEditable, schoolName, titleOfStudy, periodOfStudy, educationEditable } =
+      this.state;
 
     return (
       <div className="App">
@@ -41,6 +49,14 @@ class App extends Component {
           phoneNumber={phoneNumber}
           onInputChange={this.onInputChange}
           editable={generalEditable}
+          setEditable={this.setEditable}
+        />
+        <Education
+          schoolName={schoolName}
+          titleOfStudy={titleOfStudy}
+          periodOfStudy={periodOfStudy}
+          onInputChange={this.onInputChange}
+          educationEditable={educationEditable}
           setEditable={this.setEditable}
         />
       </div>

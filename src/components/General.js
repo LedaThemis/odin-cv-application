@@ -37,12 +37,22 @@ class General extends Component {
           </div>
         </div>
         {editable && (
-          <button id="general-section-submit" type="button" onClick={() => setEditable('generalEditable', false)}>
+          <button
+            id="general-section-submit"
+            className="submit-button"
+            type="button"
+            onClick={() => setEditable('generalEditable', false)}
+          >
             Submit
           </button>
         )}
         {!editable && (
-          <button id="general-section-edit" type="button" onClick={() => setEditable('generalEditable', true)}>
+          <button
+            id="general-section-edit"
+            className="edit-button"
+            type="button"
+            onClick={() => setEditable('generalEditable', true)}
+          >
             Edit
           </button>
         )}
