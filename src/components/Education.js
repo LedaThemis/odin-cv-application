@@ -5,10 +5,34 @@ import displayElement from '../helpers/displayElement';
 class Education extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      schoolName: '',
+      titleOfStudy: '',
+      periodOfStudy: '',
+      editable: true,
+    };
+
+    this.onInputChange = this.onInputChange.bind(this);
+    this.setEditable = this.setEditable.bind(this);
+  }
+
+  onInputChange(e) {
+    const input = e.target;
+    const stateKey = input.dataset.statekey;
+    this.setState({
+      [stateKey]: input.value,
+    });
+  }
+
+  setEditable(statekey, newState) {
+    this.setState({
+      [statekey]: newState,
+    });
   }
 
   render() {
-    const { schoolName, titleOfStudy, periodOfStudy, onInputChange, editable, setEditable } = this.props;
+    const { schoolName, titleOfStudy, periodOfStudy, editable } = this.state;
     return (
       <div id="education-section">
         <div className="inputs-div">
@@ -17,7 +41,7 @@ class Education extends Component {
               School Name
             </label>
 
-            {displayElement('schoolName', 'schoolName', 'text', 'schoolName', schoolName, onInputChange, editable)}
+            {displayElement('schoolName', 'schoolName', 'text', 'schoolName', schoolName, this.onInputChange, editable)}
           </div>
           <div className="input-div">
             <label className="input-label" htmlFor="titleOfStudy">
@@ -30,7 +54,7 @@ class Education extends Component {
               'text',
               'titleOfStudy',
               titleOfStudy,
-              onInputChange,
+              this.onInputChange,
               editable
             )}
           </div>
@@ -45,7 +69,7 @@ class Education extends Component {
               'number',
               'periodOfStudy',
               periodOfStudy,
-              onInputChange,
+              this.onInputChange,
               editable
             )}
           </div>
@@ -55,7 +79,7 @@ class Education extends Component {
             id="education-section-submit"
             className="submit-button"
             type="button"
-            onClick={() => setEditable('educationEditable', false)}
+            onClick={() => this.setEditable('editable', false)}
           >
             Submit
           </button>
@@ -65,7 +89,7 @@ class Education extends Component {
             id="education-section-edit"
             className="edit-button"
             type="button"
-            onClick={() => setEditable('educationEditable', true)}
+            onClick={() => this.setEditable('editable', true)}
           >
             Edit
           </button>
