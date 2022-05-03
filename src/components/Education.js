@@ -35,6 +35,7 @@ class Education extends Component {
     const { schoolName, titleOfStudy, periodOfStudy, editable } = this.state;
     return (
       <div id="education-section">
+        <h2 className="section-title">Education</h2>
         <div className="inputs-div">
           <div className="input-div">
             <label className="input-label" htmlFor="schoolName">

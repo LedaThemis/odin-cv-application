@@ -37,6 +37,7 @@ class General extends Component {
     const { name, email, phoneNumber, editable } = this.state;
     return (
       <div id="general-section">
+        <h2 className="section-title">General Information</h2>
         <div className="inputs-div">
           <div className="input-div">
             <label className="input-label" htmlFor="name">
