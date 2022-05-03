@@ -1,3 +1,13 @@
+body {
+    display: flex;
+    justify-content: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.App {
+    width: min(50vw, 500px);
+}
+
 .inputs-div {
     display: flex;
     flex-direction: column;
@@ -9,8 +19,9 @@
 }
 
 .value-display {
-    margin: 0;
+    margin: 0.2rem 0;
     display: inline;
+    font-weight: bold;
 }
 
 
