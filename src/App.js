@@ -3,6 +3,7 @@ import Education from './components/Education';
 import General from './components/General';
 
 import './App.css';
+import Experience from './components/Experience';
 
 class App extends Component {
   constructor() {
@@ -14,6 +15,7 @@ class App extends Component {
       <div className="App">
         <General />
         <Education />
+        <Experience />
       </div>
     );
   }
