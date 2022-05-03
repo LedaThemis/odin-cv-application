@@ -42,7 +42,7 @@ class Job extends Component {
           <div className="input-div">
             <label className="companyName-label" htmlFor="companyName">
               Company Name
-              <span onClick={removeJob}>
+              <span id="remove-job-span" onClick={removeJob}>
                 <AiOutlineClose />
               </span>
             </label>

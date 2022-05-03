@@ -6,3 +6,7 @@
 .job-date-title {
     margin: 0;
 }
+
+#remove-job-span {
+    cursor: pointer;
+}

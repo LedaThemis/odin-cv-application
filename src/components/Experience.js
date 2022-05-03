@@ -38,7 +38,7 @@ class Experience extends Component {
       <div id="experience-section">
         <h2 className="experience-section-title section-title">
           Experience
-          <span onClick={this.handleAddJob}>
+          <span id="add-job-span" onClick={this.handleAddJob}>
             <FaPlus />
           </span>
         </h2>
