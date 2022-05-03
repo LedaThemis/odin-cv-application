@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FaRegWindowClose } from 'react-icons/fa';
+import { AiOutlineClose } from 'react-icons/ai';
 import displayElement from '../helpers/displayElement';
 
 import '../styles/Job.css';
@@ -43,7 +43,7 @@ class Job extends Component {
             <label className="companyName-label" htmlFor="companyName">
               Company Name
               <span onClick={removeJob}>
-                <FaRegWindowClose />
+                <AiOutlineClose />
               </span>
             </label>
             {displayElement(
