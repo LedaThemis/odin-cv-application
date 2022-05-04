@@ -5,21 +5,15 @@ import General from './components/General';
 import './App.css';
 import Experience from './components/Experience';
 
-class App extends Component {
-  constructor() {
-    super();
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <h1>CV Application</h1>
-        <General />
-        <Education />
-        <Experience />
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <div className="App">
+      <h1>CV Application</h1>
+      <General />
+      <Education />
+      <Experience />
+    </div>
+  );
+};
 
 export default App;
