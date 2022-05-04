@@ -28,7 +28,7 @@ const Experience = () => {
           <FaPlus />
         </span>
       </h2>
-      <div id="jobs">{this.state.jobs.map(({ _, jobElement }) => jobElement)}</div>
+      <div id="jobs">{jobs.map(({ _, jobElement }) => jobElement)}</div>
     </div>
   );
 };
