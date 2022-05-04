@@ -1,103 +1,80 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
 import displayElement from '../helpers/displayElement';
 
-class Education extends Component {
-  constructor(props) {
-    super(props);
+const Education = () => {
+  const [schoolName, setSchoolName] = useState('');
+  const [titleOfStudy, setTitleOfStudy] = useState('');
+  const [periodOfStudy, setPeriodOfStudy] = useState('');
+  const [editable, setEditable] = useState(true);
 
-    this.state = {
-      schoolName: '',
-      titleOfStudy: '',
-      periodOfStudy: '',
-      editable: true,
-    };
+  return (
+    <div id="education-section">
+      <h2 className="section-title">Education</h2>
+      <div className="inputs-div">
+        <div className="input-div">
+          <label className="input-label" htmlFor="schoolName">
+            School Name
+          </label>
 
-    this.onInputChange = this.onInputChange.bind(this);
-    this.setEditable = this.setEditable.bind(this);
-  }
-
-  onInputChange(e) {
-    const input = e.target;
-    const stateKey = input.dataset.statekey;
-    this.setState({
-      [stateKey]: input.value,
-    });
-  }
-
-  setEditable(statekey, newState) {
-    this.setState({
-      [statekey]: newState,
-    });
-  }
-
-  render() {
-    const { schoolName, titleOfStudy, periodOfStudy, editable } = this.state;
-    return (
-      <div id="education-section">
-        <h2 className="section-title">Education</h2>
-        <div className="inputs-div">
-          <div className="input-div">
-            <label className="input-label" htmlFor="schoolName">
-              School Name
-            </label>
-
-            {displayElement('schoolName', 'schoolName', 'text', 'schoolName', schoolName, this.onInputChange, editable)}
-          </div>
-          <div className="input-div">
-            <label className="input-label" htmlFor="titleOfStudy">
-              Title of Study
-            </label>
-
-            {displayElement(
-              'titleOfStudy',
-              'titleOfStudy',
-              'text',
-              'titleOfStudy',
-              titleOfStudy,
-              this.onInputChange,
-              editable
-            )}
-          </div>
-          <div className="input-div">
-            <label className="input-label" htmlFor="periodOfStudy">
-              Period of Study (yrs.)
-            </label>
-
-            {displayElement(
-              'periodOfStudy',
-              'periodOfStudy',
-              'number',
-              'periodOfStudy',
-              periodOfStudy,
-              this.onInputChange,
-              editable
-            )}
-          </div>
+          {displayElement(
+            'schoolName',
+            'schoolName',
+            'text',
+            'schoolName',
+            schoolName,
+            (e) => setSchoolName(e.target.value),
+            editable
+          )}
         </div>
-        {editable && (
-          <button
-            id="education-section-submit"
-            className="submit-button"
-            type="button"
-            onClick={() => this.setEditable('editable', false)}
-          >
-            Submit
-          </button>
-        )}
-        {!editable && (
-          <button
-            id="education-section-edit"
-            className="edit-button"
-            type="button"
-            onClick={() => this.setEditable('editable', true)}
-          >
-            Edit
-          </button>
-        )}
+        <div className="input-div">
+          <label className="input-label" htmlFor="titleOfStudy">
+            Title of Study
+          </label>
+
+          {displayElement(
+            'titleOfStudy',
+            'titleOfStudy',
+            'text',
+            'titleOfStudy',
+            titleOfStudy,
+            (e) => setTitleOfStudy(e.target.value),
+            editable
+          )}
+        </div>
+        <div className="input-div">
+          <label className="input-label" htmlFor="periodOfStudy">
+            Period of Study (yrs.)
+          </label>
+
+          {displayElement(
+            'periodOfStudy',
+            'periodOfStudy',
+            'number',
+            'periodOfStudy',
+            periodOfStudy,
+            (e) => setPeriodOfStudy(e.target.value),
+            editable
+          )}
+        </div>
       </div>
-    );
-  }
-}
+      {editable && (
+        <button
+          id="education-section-submit"
+          className="submit-button"
+          type="button"
+          onClick={() => setEditable(false)}
+        >
+          Submit
+        </button>
+      )}
+      {!editable && (
+        <button id="education-section-edit" className="edit-button" type="button" onClick={() => setEditable(true)}>
+          Edit
+        </button>
+      )}
+    </div>
+  );
+};
 
 export default Education;
