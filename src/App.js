@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Education from './components/Education';
 import General from './components/General';
 
