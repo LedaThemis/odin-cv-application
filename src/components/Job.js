@@ -9,7 +9,7 @@ const Job = (props) => {
   const [positionTitle, setPositionTitle] = useState('');
   const [dateFrom, setDateFrom] = useState('');
   const [dateUntil, setDateUntil] = useState('');
-  const [editable, setEditable] = useState('');
+  const [editable, setEditable] = useState(true);
 
   const { removeJob } = props;
 
